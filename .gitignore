@@ -16,3 +16,4 @@ mono_crash.*.json
 
 #linux app backup files
 *~
+.vscode/settings.json

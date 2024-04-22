@@ -1,34 +1,32 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://mcco6kponoqp"]
 
-[ext_resource path="res://rumble_control/rumble_control.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://rumble_control/rumble_control.gd" id="1"]
 
 [node name="Rumble Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 5.0
-margin_right = -5.0
-margin_bottom = -5.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("1")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 anchor_right = 1.0
-margin_bottom = 30.0
+offset_bottom = 30.0
 text = "Rumble Control"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="Slider" type="VSlider" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 0.8
-margin_top = 30.0
-rect_pivot_offset = Vector2( 77, 152 )
+offset_top = 30.0
+pivot_offset = Vector2(77, 152)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 max_value = 1.0
@@ -36,11 +34,9 @@ step = 0.1
 value = 0.5
 tick_count = 20
 ticks_on_borders = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 anchor_top = 0.8
 anchor_right = 1.0
 anchor_bottom = 1.0

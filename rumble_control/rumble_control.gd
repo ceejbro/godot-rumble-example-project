@@ -1,26 +1,26 @@
-tool
+@tool
 class_name RumbleControl
 extends Control
 # A control node for testing a rumble configuration.
 # Both a gamepad and handheld variant of a particular rumble can be implemented.
 # This provides a simple, single rumble - but may be overridden to do more.
 
-export var label := "Rumble Control"  setget _set_label
+@export var label := "Rumble Control":  set = _set_label
 
-export(float, 0, 1) var weak_magnitude_factor := 1.0
+@export_range(0.0, 1.0, 0.01) var weak_magnitude_factor := 1.0
 
-export(float, 0, 1) var strong_magnitude_factor := 1.0
+@export_range(0.0, 1.0, 0.01) var strong_magnitude_factor := 1.0
 
-export(float, 0.01, 10) var duration := 1.0 setget _set_duration
+@export_range(0.01, 10.0, 0.01) var duration := 1.0: set = _set_duration
 
-export(int, 10, 10000) var handheld_duration := 100 setget _set_handheld_duration
+@export_range(10, 10000) var handheld_duration := 100: set = _set_handheld_duration
 
-onready var timer : Timer = $Timer
+@onready var timer : Timer = $Timer
 
 
 func _ready() -> void:
 	# warning-ignore:return_value_discarded
-	$Button.connect("pressed", self, "_on_Button_pressed")
+	$Button.pressed.connect(Callable(self, "_on_Button_pressed"))
 
 
 func _set_label(value) -> void:
