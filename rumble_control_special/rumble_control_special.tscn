@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://mcco6kponoqp" path="res://rumble_control/rumble_control.tscn" id="2"]
 
 [node name="Rumble Control" instance=ExtResource("2")]
-grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1")
+label = "Pulse"
 duration = 2.0
 handheld_duration = 1000
+
+[node name="Label" parent="." index="0"]
+text = "Pulse"

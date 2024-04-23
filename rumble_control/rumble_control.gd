@@ -19,7 +19,6 @@ extends Control
 
 
 func _ready() -> void:
-	# warning-ignore:return_value_discarded
 	$Button.pressed.connect(Callable(self, "_on_Button_pressed"))
 
 
